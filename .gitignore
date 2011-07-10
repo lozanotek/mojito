@@ -1,0 +1,40 @@
+# use glob syntax
+syntax: glob
+
+# Ignore Visual Studio 2008 files
+*.obj
+*.exe
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+*.docstates
+*.[Rr]e[Ss]harper
+[Uu]pgrade[Ll]og*.xml
+[Bb]in
+[Db]ebug*/
+_[Uu]pgrade[Rr]eport_*/
+obj/
+[Rr]elease*/
+_[Rr]e[Ss]harper*/
+*.[Rr]e[Ss]harper.*
+[Tt]est[Rr]esult*
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+*[Ll]ogs*
+*.orig
+*.*~
