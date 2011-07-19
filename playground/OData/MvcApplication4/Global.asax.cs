@@ -14,6 +14,7 @@ namespace MvcApplication4
     using System.ServiceModel.Channels;
     using System.ServiceModel.Description;
     using System.ServiceModel.Dispatcher;
+    using MvcApplication4.Routing;
     using MvcTurbine.ComponentModel;
     using MvcTurbine.Ninject;
     using MvcTurbine.Routing;
@@ -32,6 +33,7 @@ namespace MvcApplication4
         public void Register(IServiceLocator locator) {
 
             TurbineDataHostFactory.SetServiceLocator(locator);
+            locator.Register<IFeedRouteService, FeedRouteService>();
 
             locator.Register<IServiceBehavior, TurbineServiceBehavior>();
             locator.Register<IServiceInstanceProvider, TurbineInstanceProvider>();
@@ -54,6 +56,9 @@ namespace MvcApplication4
                 Defaults = new RouteValueDictionary { { "serviceType", "odata" } },
                 Constraints = new RouteValueDictionary { { "serviceType", "odata" } }
             };
+
+            RouteTable.Routes.Add(new DynamicServiceRoute("feed/{feedIdentifier}", null, HostFactoryBase, typeof(Packages)));
+            //RouteTable.Routes.Add(new DynamicSyndicationRoute("RSS/{feedIdentifier}/{apiKey}", typeof(PackageRssFeedHandler)));
 
             routes.Add("nuget", serviceRoute);
 

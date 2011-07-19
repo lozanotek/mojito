@@ -18,8 +18,12 @@ namespace MvcApplication4.Services {
         // This method is called only once to initialize service-wide policies.
         public static void InitializeService(DataServiceConfiguration config) {
             config.SetEntitySetAccessRule("Packages", EntitySetRights.AllRead);
+            config.SetEntitySetPageSize("Packages", 250);
             config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V2;
+
+#if DEBUG
             config.UseVerboseErrors = true;
+#endif
         }
 
         protected override PackageContext CreateDataSource()
