@@ -32,16 +32,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MvcTurbine">
-      <HintPath>..\mojito\packages\MVCTurbine.3.3\lib\MvcTurbine.dll</HintPath>
+      <HintPath>..\packages\MVCTurbine.3.3\lib\MvcTurbine.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcTurbine.DataServices">
+      <HintPath>..\packages\MvcTurbine.DataServices.1.0\lib\MvcTurbine.DataServices.dll</HintPath>
     </Reference>
     <Reference Include="MvcTurbine.Ninject">
-      <HintPath>..\mojito\packages\MvcTurbine.Ninject.3.3\lib\MvcTurbine.Ninject.dll</HintPath>
+      <HintPath>..\packages\MvcTurbine.Ninject.3.3\lib\MvcTurbine.Ninject.dll</HintPath>
     </Reference>
     <Reference Include="MvcTurbine.Web">
-      <HintPath>..\mojito\packages\MVCTurbine.3.3\lib\MvcTurbine.Web.dll</HintPath>
+      <HintPath>..\packages\MVCTurbine.3.3\lib\MvcTurbine.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -53,9 +62,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PackageController.cs" />
+    <Compile Include="Models\FeedServiceModel.cs" />
+    <Compile Include="Services\FeedRouteService.cs" />
+    <Compile Include="Services\IFeedRouteService.cs" />
+    <Compile Include="Models\PackageServiceModel.cs" />
     <Compile Include="MojitoApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routes.cs" />
+    <Compile Include="Models\MojitoContext.cs" />
+    <Compile Include="Services\InfoService.cs" />
+    <Compile Include="Services\MojitoDataService.cs" />
+    <Compile Include="Services\PackageService.cs" />
+    <Compile Include="Services\ServiceReg.cs" />
+    <Compile Include="Services\IPackageHandler.cs" />
+    <Compile Include="Models\NuGetContext.cs" />
+    <Compile Include="Services\ServiceRoutes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mojito.Domain\Mojito.Domain.csproj">
+      <Project>{B7F19508-8806-46EF-881E-3430D48B2EA3}</Project>
+      <Name>Mojito.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

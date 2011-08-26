@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Factory="MvcTurbine.DataServices.TurbineDataHostFactory, MvcTurbine.DataServices" Service="Mojito.Server.Services.Packages.PackageService, Mojito.Server" %>

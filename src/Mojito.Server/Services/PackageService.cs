@@ -1,34 +1,13 @@
-namespace MvcApplication4.Services {
+namespace Mojito.Server.Services {
     using System;
     using System.Data.Services;
-    using System.Data.Services.Common;
     using System.Data.Services.Providers;
     using System.IO;
-
-   
-    [System.ServiceModel.ServiceBehavior(IncludeExceptionDetailInFaults = true)]
-    public class Packages : DataService<PackageContext>, IDataServiceStreamProvider, IServiceProvider {
-        private PackageContext Context { get; set; }
-
-        public Packages(PackageContext context)
-        {
+    using Mojito.Server.Models;
+    
+    public class PackageService : MojitoDataService<NuGetContext>, IDataServiceStreamProvider, IServiceProvider {
+        public PackageService(NuGetContext context) : base(context) {
             Context = context;
-        }
-
-        // This method is called only once to initialize service-wide policies.
-        public static void InitializeService(DataServiceConfiguration config) {
-            config.SetEntitySetAccessRule("Packages", EntitySetRights.AllRead);
-            config.SetEntitySetPageSize("Packages", 250);
-            config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V2;
-
-#if DEBUG
-            config.UseVerboseErrors = true;
-#endif
-        }
-
-        protected override PackageContext CreateDataSource()
-        {
-            return Context;
         }
 
         public void DeleteStream(object entity, DataServiceOperationContext operationContext) {
@@ -40,8 +19,6 @@ namespace MvcApplication4.Services {
         }
 
         public Uri GetReadStreamUri(object entity, DataServiceOperationContext operationContext) {
-            var package = (Package)entity;
-
             return null;
         }
 

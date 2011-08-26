@@ -41,6 +41,9 @@
     <Reference Include="MvcTurbine">
       <HintPath>..\packages\MVCTurbine.3.3\lib\MvcTurbine.dll</HintPath>
     </Reference>
+    <Reference Include="MvcTurbine.DataServices">
+      <HintPath>..\packages\MvcTurbine.DataServices.1.0\lib\MvcTurbine.DataServices.dll</HintPath>
+    </Reference>
     <Reference Include="MvcTurbine.Ninject">
       <HintPath>..\packages\MvcTurbine.Ninject.3.3\lib\MvcTurbine.Ninject.dll</HintPath>
     </Reference>
@@ -79,19 +82,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppRoutes.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Routing\DynamicServiceRoute.cs" />
-    <Compile Include="Routing\DynamicSyndicationRoute.cs" />
+    <Compile Include="ServiceReg.cs" />
     <Compile Include="Services\IPackageHandler.cs" />
     <Compile Include="Services\Package.cs" />
     <Compile Include="Services\PackageContext.cs" />
     <Compile Include="Services\FeedService.svc.cs">
       <DependentUpon>FeedService.svc</DependentUpon>
     </Compile>
+    <Compile Include="SvcRoutes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

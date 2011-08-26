@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Factory="MvcApplication4.TurbineDataHostFactory, MvcApplication4" Service="MvcApplication4.Services.Packages" %>
+﻿<%@ ServiceHost Language="C#" Factory="MvcTurbine.DataServices.TurbineDataHostFactory, MvcTurbine.DataServices" Service="MvcApplication4.Services.Packages" %>
