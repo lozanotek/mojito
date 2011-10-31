@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{89F1C043-F999-4B19-BFE7-A06F46FF7174}</ProjectGuid>
+    <ProjectGuid>{0E8F5557-0C7B-43AE-A82A-0C238B239914}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mojito.Server</RootNamespace>
-    <AssemblyName>Mojito.Server</AssemblyName>
+    <RootNamespace>Mojito.Tests</RootNamespace>
+    <AssemblyName>Mojito.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,30 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MvcTurbine">
-      <HintPath>..\packages\MVCTurbine.3.3\lib\MvcTurbine.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="MvcTurbine.DataServices">
-      <HintPath>..\packages\MvcTurbine.DataServices.1.0\lib\MvcTurbine.DataServices.dll</HintPath>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
     </Reference>
-    <Reference Include="MvcTurbine.Ninject">
-      <HintPath>..\packages\MvcTurbine.Ninject.3.3\lib\MvcTurbine.Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="MvcTurbine.Web">
-      <HintPath>..\packages\MVCTurbine.3.3\lib\MvcTurbine.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject">
-      <HintPath>..\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Services" />
-    <Reference Include="System.Data.Services.Client" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,26 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PackageController.cs" />
-    <Compile Include="Models\FeedServiceModel.cs" />
-    <Compile Include="Models\Input\CreateNewFeed.cs" />
-    <Compile Include="Services\FeedRouteService.cs" />
-    <Compile Include="Services\IFeedRouteService.cs" />
-    <Compile Include="Models\PackageServiceModel.cs" />
-    <Compile Include="MojitoApp.cs" />
+    <Compile Include="FeedTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Routes.cs" />
-    <Compile Include="Models\MojitoContext.cs" />
-    <Compile Include="Services\InfoService.cs" />
-    <Compile Include="Services\MojitoDataService.cs" />
-    <Compile Include="Services\PackageService.cs" />
-    <Compile Include="Services\ServiceReg.cs" />
-    <Compile Include="Services\IPackageHandler.cs" />
-    <Compile Include="Models\NuGetContext.cs" />
-    <Compile Include="Services\ServiceRoutes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +62,6 @@
       <Name>Mojito.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

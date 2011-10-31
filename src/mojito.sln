@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Web", "Mojito.Web\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Domain", "Mojito.Domain\Mojito.Domain.csproj", "{B7F19508-8806-46EF-881E-3430D48B2EA3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{9E7A62F4-A05F-4DF8-ADE6-390C82CBE275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Tests", "Mojito.Tests\Mojito.Tests.csproj", "{0E8F5557-0C7B-43AE-A82A-0C238B239914}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,8 +29,15 @@ Global
 		{B7F19508-8806-46EF-881E-3430D48B2EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7F19508-8806-46EF-881E-3430D48B2EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7F19508-8806-46EF-881E-3430D48B2EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8F5557-0C7B-43AE-A82A-0C238B239914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8F5557-0C7B-43AE-A82A-0C238B239914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8F5557-0C7B-43AE-A82A-0C238B239914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8F5557-0C7B-43AE-A82A-0C238B239914}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E8F5557-0C7B-43AE-A82A-0C238B239914} = {9E7A62F4-A05F-4DF8-ADE6-390C82CBE275}
 	EndGlobalSection
 EndGlobal
