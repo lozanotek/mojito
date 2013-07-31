@@ -1,12 +1,9 @@
-﻿using System.Web.Routing;
-using MyGet.Server.Services;
-using RouteMagic;
-
-namespace MyGet.Server.Routing
+﻿namespace MvcApplication4.Routing
 {
-    using MvcApplication4.Services;
+	using System.Web.Routing;
+	using MvcApplication4.Services;
 
-    public static class PackageRoutes
+	public static class PackageRoutes
     {
         public static void Register()
         {

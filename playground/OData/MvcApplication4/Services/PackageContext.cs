@@ -1,57 +1,53 @@
-namespace MvcApplication4.Services
-{
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Web;
-    using System.Web.Routing;
-    using MvcApplication4.Routing;
+namespace MvcApplication4.Services {
+	using System.Linq;
+	using System.Collections.Generic;
+	using System.Web;
 
-    public interface IFeedRouteService {
-        string GetIdentifier();
-    }
+	public interface IFeedRouteService {
+		string GetIdentifier();
+	}
 
-    public class FeedRouteService : IFeedRouteService {
-        public string GetIdentifier() {
-            if (HttpContext.Current != null) {
-                var wrapper = new HttpContextWrapper(HttpContext.Current);
-                if (!wrapper.Request.RequestContext.RouteData.Values.ContainsKey("feedIdentifier"))
-                {
-                    return null;
-                }
+	public class FeedRouteService : IFeedRouteService {
+		public string GetIdentifier() {
+			if (HttpContext.Current != null) {
+				var wrapper = new HttpContextWrapper(HttpContext.Current);
+				var routeValues = wrapper.Request.RequestContext.RouteData.Values;
 
-                return wrapper.Request.RequestContext.RouteData.Values["feedIdentifier"] as string;
-            }
+				if (!routeValues.ContainsKey("feedIdentifier")) {
+					return null;
+				}
 
-            return null;
-        }
-    }
+				return routeValues["feedIdentifier"] as string;
+			}
 
-    public class PackageContext
-    {
-        public IFeedRouteService RouteService { get; private set; }
+			return null;
+		}
+	}
 
-        public PackageContext(IFeedRouteService routeService) {
-            RouteService = routeService;
-        }
+	public class PackageContext {
+		public IFeedRouteService RouteService { get; private set; }
 
-        public IQueryable<Package> Packages {
-            get {
-                // Determine identifier
-                var feedIdentifier = RouteService.GetIdentifier();
+		public PackageContext(IFeedRouteService routeService) {
+			RouteService = routeService;
+		}
 
-                IList<Package> list = new List<Package>();
+		public IQueryable<Package> Packages {
+			get {
+				// Determine identifier
+				var feedIdentifier = RouteService.GetIdentifier();
 
-                if (!string.IsNullOrEmpty(feedIdentifier)) {
-                    for (var i = 0; i < 10; i++) {
-                        var title = string.Format("Package {0} from {1}", (i + 1), feedIdentifier);
-                        var pkg = new Package {Id = title, Title = title, Version = "1.0.0.0"};
-                        list.Add(pkg);
-                    }
-                }
+				IList<Package> list = new List<Package>();
 
-                return list.AsQueryable();
-            }
-        }
-    }
+				if (!string.IsNullOrEmpty(feedIdentifier)) {
+					for (var i = 0; i < 10; i++) {
+						var title = string.Format("Package {0} from {1}", (i + 1), feedIdentifier);
+						var pkg = new Package { Id = title, Title = title, Version = "1.0.0.0", Authors = "Joe Smith"};
+						list.Add(pkg);
+					}
+				}
+
+				return list.AsQueryable();
+			}
+		}
+	}
 }

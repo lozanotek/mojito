@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Server", "Mojito.Server\Mojito.Server.csproj", "{89F1C043-F999-4B19-BFE7-A06F46FF7174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Web", "Mojito.Web\Mojito.Web.csproj", "{9340C504-16AC-45AD-92DD-19DBB69BADAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Domain", "Mojito.Domain\Mojito.Domain.csproj", "{B7F19508-8806-46EF-881E-3430D48B2EA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89F1C043-F999-4B19-BFE7-A06F46FF7174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F1C043-F999-4B19-BFE7-A06F46FF7174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F1C043-F999-4B19-BFE7-A06F46FF7174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F1C043-F999-4B19-BFE7-A06F46FF7174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9340C504-16AC-45AD-92DD-19DBB69BADAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9340C504-16AC-45AD-92DD-19DBB69BADAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9340C504-16AC-45AD-92DD-19DBB69BADAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9340C504-16AC-45AD-92DD-19DBB69BADAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F19508-8806-46EF-881E-3430D48B2EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F19508-8806-46EF-881E-3430D48B2EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F19508-8806-46EF-881E-3430D48B2EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F19508-8806-46EF-881E-3430D48B2EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

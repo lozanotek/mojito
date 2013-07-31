@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Server", "Mojito.Server\Mojito.Server.csproj", "{89F1C043-F999-4B19-BFE7-A06F46FF7174}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mojito.Web", "Mojito.Web\Mojito.Web.csproj", "{9340C504-16AC-45AD-92DD-19DBB69BADAF}"
