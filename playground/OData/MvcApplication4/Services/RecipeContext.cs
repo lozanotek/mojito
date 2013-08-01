@@ -1,12 +1,12 @@
 namespace MvcApplication4.Services {
 	using System;
-	using System.Linq;
 	using System.Collections.Generic;
+	using System.Linq;
 
-	public class PackageContext {
+	public class RecipeContext {
 		public IFeedRouteService RouteService { get; private set; }
 
-		public PackageContext(IFeedRouteService routeService) {
+		public RecipeContext(IFeedRouteService routeService) {
 			RouteService = routeService;
 		}
 
@@ -19,25 +19,26 @@ namespace MvcApplication4.Services {
 
 				if (!string.IsNullOrEmpty(feedIdentifier)) {
 					for (var i = 0; i < 10; i++) {
-						var title = string.Format("Package {0} from {1}", (i + 1), feedIdentifier);
-						var id = string.Format("Package.{0}.{1}", (i + 1), feedIdentifier);
+						var title = string.Format("Recipe {0} from {1}", (i + 1), feedIdentifier);
+						var id = string.Format("{0}.{1}.recipe", (i + 1), feedIdentifier);
 
 						var pkg = new Package {
 							Id = id,
 							Title = title,
 							Version = "1.0.0.0",
 							Authors = "Joe Smith",
-							IsAbsoluteLatestVersion =  true,
+							IsAbsoluteLatestVersion = true,
 							IsLatestVersion = true,
 							LastUpdated = DateTime.Now.AddHours(-4),
 							Listed = true,
-							PackageSize = 1024*3,
+							PackageSize = 1024 * 4,
 							Published = DateTime.Now.AddHours(-4),
 							DownloadCount = 1,
 							RequireLicenseAcceptance = false,
 							Copyright = "2013",
 							Description = "Demo",
-							VersionDownloadCount = 1
+							VersionDownloadCount = 1,
+							Dependencies = "Ninject:3.0.1.10:|EntityFramework:5.0.0:"
 						};
 
 						list.Add(pkg);

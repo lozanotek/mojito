@@ -5,7 +5,10 @@ namespace MvcApplication4.Services {
 	using System.Web.Routing;
 
 	public class PackageServiceStreamProvider : DefaultServiceStreamProvider {
-		public PackageServiceStreamProvider() {
+		public Func<Package, RouteBase> RouteProvider { get; private set; }
+
+		public PackageServiceStreamProvider(Func<Package, RouteBase> routeProvider) {
+			RouteProvider = routeProvider;
 			ContentType = "application/zip";
 		}
 
@@ -16,10 +19,11 @@ namespace MvcApplication4.Services {
 		}
 
 		public string GetPackageDownloadPath(Package package) {
-			var route = RouteTable.Routes[RouteNames.Packages.Download];
-			var routeValues = new { id = package.Id, version = package.Version, httproute = true };
+			var route = RouteProvider(package);
+			var routeValues = new { id = package.Id, version = package.Version };
 			var pathData = route.GetVirtualPath(RequestContext, new RouteValueDictionary(routeValues)) ?? new VirtualPathData(route, "~");
 			var path = pathData.VirtualPath;
+
 			return VirtualPathUtility.ToAbsolute("~/" + path);
 		}
 

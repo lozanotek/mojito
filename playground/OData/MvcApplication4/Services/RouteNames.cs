@@ -2,15 +2,7 @@ namespace MvcApplication4.Services {
 	using System.Web.Routing;
 
 	public static class RouteNames {
-		public static readonly RouteValueDictionary PackageFeedRouteValues = new RouteValueDictionary { { "serviceType", "odata" } };
-
-		public const string ApiExplorer = "ApiExplorer";
-		public const string Indexing = "Indexing";
-
-		public static class Users {
-			public const string All = "Users.All";
-			public const string ForUser = "Users.ForUser";
-		}
+		public const string Default = "Default";
 
 		public static class Packages {
 			public const string Search = "Packages.Search";
@@ -20,6 +12,10 @@ namespace MvcApplication4.Services {
 			public const string Download = "Packages.Download";
 			public const string DownloadLatestVersion = "Packages.Download.Latest";
 			public const string Feed = "OData Package Feed";
+		}
+
+		public static class Recipes {
+			public const string Download = "Recipes.Download";
 		}
 
 		public const string TabCompletionPackageIds = "Package Manager Console Tab Completion - Package IDs";

@@ -15,7 +15,9 @@
 			}
 			pathPrefix += "{*servicePath}";
 
-			virtualPath = "getHub/";
+			var serviceName = serviceType.Name.Replace("Service", "");
+			virtualPath = string.Format("turon/{0}/", serviceName);
+
 			innerServiceRoute = new ServiceRoute(virtualPath, serviceHostFactory, serviceType);
 			innerRoute = new Route(pathPrefix, new RouteValueDictionary(defaults), this);
 		}

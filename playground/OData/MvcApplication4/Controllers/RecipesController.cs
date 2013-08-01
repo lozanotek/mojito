@@ -1,12 +1,11 @@
 namespace MvcApplication4.Controllers {
-	using System;
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Web.Mvc;
 	using NuGet;
 
-	public class PackagesController : Controller {
-		public ActionResult DownloadPackage(string id, string version) {
+	public class RecipesController : Controller {
+		public ActionResult Download(string version, string id) {
 			var metadata = new ManifestMetadata {
 				Authors = "John Smith",
 				Version = version,
@@ -19,6 +18,9 @@ namespace MvcApplication4.Controllers {
 				Dependencies = new List<ManifestDependency> {
 					new ManifestDependency {
 						Id = "Ninject", Version = "3.0.1.10"
+					},
+					new ManifestDependency {
+						Id = "EntityFramework", Version = "5.0.0"
 					}
 				}
 			};
@@ -31,7 +33,6 @@ namespace MvcApplication4.Controllers {
 			var packageStream = new MemoryStream();
 			builder.Save(packageStream);
 			packageStream.Seek(0, SeekOrigin.Begin);
-
 			return File(packageStream, "application/zip");
 		}
 	}

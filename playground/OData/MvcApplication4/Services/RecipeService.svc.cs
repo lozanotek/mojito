@@ -6,10 +6,10 @@ namespace MvcApplication4.Services {
 	using System.Web.Routing;
 
 	[System.ServiceModel.ServiceBehavior(IncludeExceptionDetailInFaults = true)]
-	public class Packages : DataService<PackageContext>, IServiceProvider {
-		private PackageContext Context { get; set; }
+	public class Recipes : DataService<RecipeContext>, IServiceProvider {
+		private RecipeContext Context { get; set; }
 
-		public Packages(PackageContext context) {
+		public Recipes(RecipeContext context) {
 			Context = context;
 		}
 
@@ -23,13 +23,13 @@ namespace MvcApplication4.Services {
 #endif
 		}
 
-		protected override PackageContext CreateDataSource() {
+		protected override RecipeContext CreateDataSource() {
 			return Context;
 		}
 
 		public object GetService(Type serviceType) {
-			return serviceType == typeof(IDataServiceStreamProvider) ? 
-				new PackageServiceStreamProvider(pkg => RouteTable.Routes[RouteNames.Packages.Download]) : null;
+			return serviceType == typeof(IDataServiceStreamProvider) ?
+				new PackageServiceStreamProvider(pkg => RouteTable.Routes[RouteNames.Recipes.Download]) : null;
 		}
 	}
 }

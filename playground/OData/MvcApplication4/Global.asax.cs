@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -37,6 +35,8 @@ namespace MvcApplication4 {
 			locator.Register<ServiceHostFactoryBase, TurbineDataHostFactory>();
 			locator.Register<Packages, Packages>();
 			locator.Register<PackageContext, PackageContext>();
+			locator.Register<RecipeContext, RecipeContext>();
+			locator.Register<Recipes, Recipes>();
 		}
 	}
 
@@ -48,28 +48,30 @@ namespace MvcApplication4 {
 		}
 
 		public void Register(RouteCollection routes) {
-			//var serviceRoute = new ServiceRoute("nuget", HostFactoryBase, typeof(Packages)) {
-			//	Defaults = new RouteValueDictionary { { "serviceType", "odata" } },
-			//	Constraints = new RouteValueDictionary { { "serviceType", "odata" } }
-			//};
-
-			RouteTable.Routes.Add(new DynamicServiceRoute("feed/{feedIdentifier}", null, HostFactoryBase, typeof(Packages)));
-			//RouteTable.Routes.Add(new DynamicSyndicationRoute("RSS/{feedIdentifier}/{apiKey}", typeof(PackageRssFeedHandler)));
-
-			//routes.Add("nuget", serviceRoute);
-
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+			RouteTable.Routes.Add(new DynamicServiceRoute("feed/{feedIdentifier}", 
+				null, HostFactoryBase, typeof(Packages)));
+			RouteTable.Routes.Add(new DynamicServiceRoute("recipe/{feedIdentifier}", 
+				null, HostFactoryBase, typeof(Recipes)));
+
+			//RouteTable.Routes.Add(new DynamicSyndicationRoute("RSS/{feedIdentifier}/{apiKey}", typeof(PackageRssFeedHandler)));
+
 			routes.MapRoute(
-				RouteNames.Packages.Download, 
-				"packages/{id}/{version}/content",
-				new { controller = "Packages", action = "DownloadPackage" });
-			
-			routes.MapRoute(
-				"__default",
+				RouteNames.Default,
 				"{controller}/{action}/{id}",
 				new { controller = "Home", action = "Index" }
 			);
+
+			routes.MapRoute(
+				RouteNames.Recipes.Download,
+				"recipes/{id}/{version}/content",
+				new { controller = "Recipes", action = "Download" });
+
+			routes.MapRoute(
+				RouteNames.Packages.Download,
+				"packages/{id}/{version}/content",
+				new { controller = "Packages", action = "Download" });
 		}
 	}
 
