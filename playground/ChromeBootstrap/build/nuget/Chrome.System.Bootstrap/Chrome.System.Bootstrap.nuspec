@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Chrome.System.Bootstrap</id>
+    <version>1.0.0</version>
+    <title>Chrome for Systems - Mvc + Bootstrap</title>
+    <authors>Core Team</authors>
+    <owners>Core Team</owners>
+    <iconUrl>http://intlcdn.net/img/nuget_intl.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Files implementing Connect Chrome in System applications using Twitter Bootstrap.</description>
+    <summary>Connect Chrome for Systems - Mvc Bootstrap</summary>
+    <language>en-US</language>
+    <tags>chrome system razor mvc bootstrap</tags>
+  </metadata>
+</package>
+

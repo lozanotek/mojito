@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeBootstrap", "ChromeBootstrap\ChromeBootstrap.csproj", "{770A3080-2744-4FD1-B979-B98E61FF301A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{19416228-4758-43F9-A946-E42C587DDB9B}"
+	ProjectSection(SolutionItems) = preProject
+		..\content\Views\Shared\_Bootstrap.cshtml = ..\content\Views\Shared\_Bootstrap.cshtml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuHost", "..\MenuHost\MenuHost.csproj", "{90344F1C-11D6-42E5-882F-5F5393DA4F30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{770A3080-2744-4FD1-B979-B98E61FF301A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770A3080-2744-4FD1-B979-B98E61FF301A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770A3080-2744-4FD1-B979-B98E61FF301A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770A3080-2744-4FD1-B979-B98E61FF301A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90344F1C-11D6-42E5-882F-5F5393DA4F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90344F1C-11D6-42E5-882F-5F5393DA4F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90344F1C-11D6-42E5-882F-5F5393DA4F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90344F1C-11D6-42E5-882F-5F5393DA4F30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

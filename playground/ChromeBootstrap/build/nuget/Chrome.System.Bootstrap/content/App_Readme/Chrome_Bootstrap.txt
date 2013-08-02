@@ -1,0 +1,40 @@
+Basic Usage
+------------
+
+To use Connect Chrome with Twitter Bootstrap, please add the following line to your Application_Start method:
+
+	MenuConfig.InitializeMenu();
+
+This will initialize the menu with the application's initial context.
+
+Menu Build Up
+--------------
+
+Using this context we build the application's menu using this method:
+
+	private static Menu BuildStaticMenu() {
+		var urlProvider = MenuManager.UrlProvider;
+
+		var menu =
+			new Menu(
+				new MenuItem("Home","#",
+					new MenuItem("Main", urlProvider.Action("Index", "Home")),
+					new MenuItem("About", urlProvider.Action("About", "Home"))
+				)
+			);
+
+		return menu;
+	}
+
+This will build the menu using the HttpContext during application start up.  For per-request menu rendering, please see the section below.
+
+Per-Request Menu Execution
+--------------------------
+
+If you'r looking for per-request execution for an specific menu item, please use delayed execution with your MenuItem.
+To use delayed execution, do the following:
+
+	var myItem = new MenuItem("Item Text", 
+		() => MenuManager.Url.Action("SomeAction", "SomeController"));
+
+Delayed execution gives you the ability to use route data from the current request to build your URL.
