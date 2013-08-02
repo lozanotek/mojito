@@ -3,6 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication4", "MvcApplication4\MvcApplication4.csproj", "{5EAEF931-1CAD-42AB-B8E9-BCEE83AEF648}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{C602435B-6D37-4C5D-B271-FC6B9A1C1C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataServices", "DataServices\DataServices.csproj", "{135C3875-41B0-4983-BB50-E8FE534A8686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{64A02530-0D8E-4C2E-9217-5C63B2690375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageServices", "PackageServices\PackageServices.csproj", "{9C25D3AD-3F7B-4D29-8901-160569164C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeServices", "RecipeServices\RecipeServices.csproj", "{D79805CC-CD2A-4D39-89A5-18519D0F2479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D42751AD-E7D9-4299-926D-A75E9AA26978}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing", "Routing\Routing.csproj", "{2249FDEE-EAD1-4B3B-A883-30E1588CAB76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +27,34 @@ Global
 		{5EAEF931-1CAD-42AB-B8E9-BCEE83AEF648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EAEF931-1CAD-42AB-B8E9-BCEE83AEF648}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EAEF931-1CAD-42AB-B8E9-BCEE83AEF648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C602435B-6D37-4C5D-B271-FC6B9A1C1C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C602435B-6D37-4C5D-B271-FC6B9A1C1C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C602435B-6D37-4C5D-B271-FC6B9A1C1C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C602435B-6D37-4C5D-B271-FC6B9A1C1C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135C3875-41B0-4983-BB50-E8FE534A8686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135C3875-41B0-4983-BB50-E8FE534A8686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135C3875-41B0-4983-BB50-E8FE534A8686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135C3875-41B0-4983-BB50-E8FE534A8686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A02530-0D8E-4C2E-9217-5C63B2690375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A02530-0D8E-4C2E-9217-5C63B2690375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A02530-0D8E-4C2E-9217-5C63B2690375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A02530-0D8E-4C2E-9217-5C63B2690375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C25D3AD-3F7B-4D29-8901-160569164C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C25D3AD-3F7B-4D29-8901-160569164C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C25D3AD-3F7B-4D29-8901-160569164C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C25D3AD-3F7B-4D29-8901-160569164C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D79805CC-CD2A-4D39-89A5-18519D0F2479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D79805CC-CD2A-4D39-89A5-18519D0F2479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D79805CC-CD2A-4D39-89A5-18519D0F2479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D79805CC-CD2A-4D39-89A5-18519D0F2479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42751AD-E7D9-4299-926D-A75E9AA26978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42751AD-E7D9-4299-926D-A75E9AA26978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42751AD-E7D9-4299-926D-A75E9AA26978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42751AD-E7D9-4299-926D-A75E9AA26978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2249FDEE-EAD1-4B3B-A883-30E1588CAB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2249FDEE-EAD1-4B3B-A883-30E1588CAB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2249FDEE-EAD1-4B3B-A883-30E1588CAB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2249FDEE-EAD1-4B3B-A883-30E1588CAB76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

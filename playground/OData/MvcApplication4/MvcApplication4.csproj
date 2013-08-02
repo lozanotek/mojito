@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
@@ -94,34 +97,25 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Zelda">
+      <HintPath>..\packages\Zelda.1.0.0.0\lib\net40\Zelda.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PackagesController.cs" />
-    <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IServiceInstanceProvider.cs" />
+    <Compile Include="ODataRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Routing\DynamicServiceRoute.cs" />
-    <Compile Include="Routing\DynamicSyndicationRoute.cs" />
-    <Compile Include="Services\FeedRouteService.cs" />
-    <Compile Include="Services\IFeedRouteService.cs" />
-    <Compile Include="Services\RecipeContext.cs" />
-    <Compile Include="Services\RecipeService.svc.cs">
-      <DependentUpon>RecipeService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Services\DefaultServiceStreamProvider.cs" />
-    <Compile Include="Services\EmptyInputStreamHttpRequestWrapper.cs" />
-    <Compile Include="Services\HttpContextWrapperWithRequest.cs" />
-    <Compile Include="Services\IPackageHandler.cs" />
-    <Compile Include="Services\Package.cs" />
-    <Compile Include="Services\PackageContext.cs" />
-    <Compile Include="Services\FeedService.svc.cs">
-      <DependentUpon>FeedService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Services\PackageServiceStreamProvider.cs" />
-    <Compile Include="Services\RouteNames.cs" />
+    <Compile Include="ServiceReg.cs" />
+    <Compile Include="Services\StubPackageRepository.cs" />
+    <Compile Include="Services\StubRecipeRepository.cs" />
+    <Compile Include="TurbineDataHostFactory.cs" />
+    <Compile Include="TurbineInstanceProvider.cs" />
+    <Compile Include="TurbineServiceBehavior.cs" />
+    <Compile Include="TurbineServiceHost.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -196,6 +190,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{c602435b-6d37-4c5d-b271-fc6b9a1c1c60}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataServices\DataServices.csproj">
+      <Project>{135c3875-41b0-4983-bb50-e8fe534a8686}</Project>
+      <Name>DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{64a02530-0d8e-4c2e-9217-5c63b2690375}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PackageServices\PackageServices.csproj">
+      <Project>{9c25d3ad-3f7b-4d29-8901-160569164c0d}</Project>
+      <Name>PackageServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecipeServices\RecipeServices.csproj">
+      <Project>{d79805cc-cd2a-4d39-89a5-18519d0f2479}</Project>
+      <Name>RecipeServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Routing\Routing.csproj">
+      <Project>{2249fdee-ead1-4b3b-a883-30e1588cab76}</Project>
+      <Name>Routing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{d42751ad-e7d9-4299-926d-a75e9aa26978}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

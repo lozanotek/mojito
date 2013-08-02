@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Factory="MvcApplication4.TurbineDataHostFactory, MvcApplication4" Service="MvcApplication4.Services.Packages" %>
