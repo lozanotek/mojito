@@ -4,7 +4,7 @@ namespace MvcApplication4 {
 	using System.Web.Routing;
 	using MvcTurbine.Routing;
 	using Turon.DataServices.Packages;
-	using Turon.DataServices.Recipes;
+	using Turon.Recipes;
 	using Turon.Routing;
 
 	public class ODataRoutes : IRouteRegistrator {

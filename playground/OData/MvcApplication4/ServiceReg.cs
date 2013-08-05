@@ -5,7 +5,8 @@ namespace MvcApplication4 {
 	using MvcTurbine.ComponentModel;
 	using Turon.Core;
 	using Turon.DataServices.Packages;
-	using Turon.DataServices.Recipes;
+	using Turon.Packages;
+	using Turon.Recipes;
 	using Turon.Routing;
 
 	public class ServiceReg : IServiceRegistration {

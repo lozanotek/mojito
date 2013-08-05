@@ -1,4 +1,4 @@
-namespace Turon.DataServices.Packages {
+namespace Turon.Packages {
 	using System.Linq;
 	using Turon.Core;
 	using Turon.Domain;

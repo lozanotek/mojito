@@ -2,6 +2,7 @@ namespace Turon.DataServices.Packages {
 	using System.ServiceModel;
 	using System.Web.Routing;
 	using Turon.DataServices;
+	using Turon.Packages;
 	using Turon.Routing;
 
 	[ServiceBehavior(IncludeExceptionDetailInFaults = true)]

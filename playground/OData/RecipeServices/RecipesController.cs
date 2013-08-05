@@ -1,11 +1,11 @@
-namespace Turon.Services.Controllers {
+namespace Turon.Recipes {
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Web.Mvc;
 	using NuGet;
 
-	public class PackagesController : Controller {
-		public ActionResult DownloadPackage(string id, string version) {
+	public class RecipesController : Controller {
+		public ActionResult Download(string version, string id) {
 			var metadata = new ManifestMetadata {
 				Authors = "John Smith",
 				Version = version,
@@ -18,6 +18,9 @@ namespace Turon.Services.Controllers {
 				Dependencies = new List<ManifestDependency> {
 					new ManifestDependency {
 						Id = "Ninject", Version = "3.0.1.10"
+					},
+					new ManifestDependency {
+						Id = "EntityFramework", Version = "5.0.0"
 					}
 				}
 			};
@@ -30,7 +33,6 @@ namespace Turon.Services.Controllers {
 			var packageStream = new MemoryStream();
 			builder.Save(packageStream);
 			packageStream.Seek(0, SeekOrigin.Begin);
-
 			return File(packageStream, "application/zip");
 		}
 	}

@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataServices", "DataService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{64A02530-0D8E-4C2E-9217-5C63B2690375}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageServices", "PackageServices\PackageServices.csproj", "{9C25D3AD-3F7B-4D29-8901-160569164C0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packages", "PackageServices\Packages.csproj", "{9C25D3AD-3F7B-4D29-8901-160569164C0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeServices", "RecipeServices\RecipeServices.csproj", "{D79805CC-CD2A-4D39-89A5-18519D0F2479}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes", "RecipeServices\Recipes.csproj", "{D79805CC-CD2A-4D39-89A5-18519D0F2479}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D42751AD-E7D9-4299-926D-A75E9AA26978}"
 EndProject

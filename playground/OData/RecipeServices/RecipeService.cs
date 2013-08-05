@@ -1,4 +1,4 @@
-namespace Turon.DataServices.Recipes {
+namespace Turon.Recipes {
 	using System.Web.Routing;
 	using Turon.DataServices;
 	using Turon.Routing;

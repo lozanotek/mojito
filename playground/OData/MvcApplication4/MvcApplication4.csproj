@@ -15,7 +15,7 @@
     <AssemblyName>MvcApplication4</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -204,13 +204,13 @@
       <Project>{64a02530-0d8e-4c2e-9217-5c63b2690375}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PackageServices\PackageServices.csproj">
+    <ProjectReference Include="..\PackageServices\Packages.csproj">
       <Project>{9c25d3ad-3f7b-4d29-8901-160569164c0d}</Project>
-      <Name>PackageServices</Name>
+      <Name>Packages</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RecipeServices\RecipeServices.csproj">
+    <ProjectReference Include="..\RecipeServices\Recipes.csproj">
       <Project>{d79805cc-cd2a-4d39-89a5-18519d0f2479}</Project>
-      <Name>RecipeServices</Name>
+      <Name>Recipes</Name>
     </ProjectReference>
     <ProjectReference Include="..\Routing\Routing.csproj">
       <Project>{2249fdee-ead1-4b3b-a883-30e1588cab76}</Project>
@@ -245,7 +245,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49273</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/turon</IISUrl>
+          <IISUrl>http://localhost:13733</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

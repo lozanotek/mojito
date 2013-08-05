@@ -1,10 +1,10 @@
-namespace Turon.DataServices.Recipes {
+namespace Turon.Recipes {
 	using AutoMapper;
 	using Turon.Domain;
 
 	public static class EntityExtensions {
 		static EntityExtensions() {
-			Mapper.CreateMap<Package, Recipe>();
+			Mapper.CreateMap<Recipe, Package>();
 		}
 
 		public static Package ToPackage(this Recipe recipe) {

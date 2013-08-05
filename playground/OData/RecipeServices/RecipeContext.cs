@@ -1,4 +1,4 @@
-namespace Turon.DataServices.Recipes {
+namespace Turon.Recipes {
 	using System.Linq;
 	using Turon.Core;
 	using Turon.Domain;
